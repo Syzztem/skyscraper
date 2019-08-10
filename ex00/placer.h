@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 11:58:48 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 12:12:24 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/10 14:33:15 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 # include <stdlib.h>
 
 void    ft_putnbr(int nb);
-int		check(int **grid, int *input, int max);
+int		check(int **grid, int *input, int max, int range);
 
 #endif

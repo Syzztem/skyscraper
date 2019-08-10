@@ -6,13 +6,11 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 12:20:08 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/10 14:50:53 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "placer.h"
-
-void	ft_putnbr(int nb);
 
 int pgrid(int **grid, int range)
 {
@@ -39,12 +37,14 @@ int fill_grid(int **grid, int *input, int range, int p)
 	int i;
 
 	i = 0;
-	while (i <= range)
+	while (i < range)
 	{
 		if (p < range * range)
 			grid[p / range][p % range] = ++i;
-		if (check(grid, input, p))
+		if (check(grid, input, p, range))
 		{
+//			pgrid(grid, range);
+//			write(1, "\n", 1);
 			if (p == range * range)
 				return (pgrid(grid, range));
 			if (fill_grid(grid, input, range, p + 1) == 0)
@@ -59,6 +59,7 @@ int place(int *input, int range)
 {
 	int **grid;
 	int y;
+	int i;
 
 	if (!(grid = malloc(sizeof(int*) * range)))
 		return 0;
@@ -68,6 +69,12 @@ int place(int *input, int range)
 		if (!(grid[y] = malloc(sizeof(int) * range)))
 			return 0;
 		y++;
+	}
+	i = 0;
+	while (i < range * range)
+	{
+		grid[i / range][i % range] = 0;
+		i++;
 	}
 	fill_grid(grid, input, range, 0);
 	return 0;

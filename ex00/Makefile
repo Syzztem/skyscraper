@@ -6,11 +6,11 @@
 #    By: lothieve <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/08 11:37:59 by lothieve          #+#    #+#              #
-#    Updated: 2019/08/10 11:27:00 by lothieve         ###   ########.fr        #
+#    Updated: 2019/08/10 13:13:53 by lothieve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = placer.c main.c ft_putnbr.c
+SRCS = placer.c main.c ft_putnbr.c checker.c
 
 OBJS = ${SRCS:.c=.o}
 
