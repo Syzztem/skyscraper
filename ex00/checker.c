@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 12:07:41 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 14:51:10 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/10 15:22:29 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int check_row(int *row, int range)
 	x = 0;
 	while (x + 1 < range)
 	{
-		y = x + 1;
+		y = 0;
 		while (y < range)
 		{
-			if (row[x] == row[y] && row[x] != 0)
-			{
+			if (row[y] == 0)
+				return (1);
+			if (row[x] == row[y] && y != x)
 				return (0);
-			}
 			y++;
 		}
 		x++;
@@ -43,11 +43,10 @@ int check_col(int **grid, int i, int range)
 	x = 0;
 	while (x + 1 < range)
 	{
-		y = x + 1;
+		y = 0;
 		while (y < range)
 		{
-//			printf("%d, %d\n", grid[i][x], grid[i][y]);
-			if (grid[x][i] == grid[y][i] && grid[x][i] != 0)
+			if (grid[x][i] == grid[y][i] && grid[x][i] != 0 && y != x)
 				return (0);
 			y++;
 		}
