@@ -6,38 +6,42 @@
 /*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 15:24:38 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/08/10 16:04:18 by lcalendi         ###   ########.fr       */
+/*   Updated: 2019/08/10 18:06:54 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
+int		count_ints(char *str)
+{
+	int i;
+
+	i = 0;
+	while (*str)
+	{
+		if (*str >= '0' && *str <= '9')
+			i++;
+		str++;
+	}
+	return (i);
+}
+
 int		*str_sort(char *str)
 {
-	int size;
 	int i;
 	int *tab;
 
+	if (!(tab = malloc(sizeof(int) * (count_ints(str)))))
+		return (NULL);
 	i = 0;
-	size = 0;
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			size++;
-		i++;
-	}
-	tab = malloc(4 * (size + 1));
-	i = 0;
-	tab[0] = size;
-	size = 1;
-	while (str[i])
-	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if (*str >= '0' && *str <= '9')
 		{
-			tab[size] = str[i] - '0';
-			size++;
+			tab[i] = *str - '0';
+			i++;
 		}
-		i++;
+		str++;
 	}
 	return (tab);
 }

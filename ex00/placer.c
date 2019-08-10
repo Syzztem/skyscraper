@@ -6,13 +6,13 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 14:50:53 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/10 18:04:17 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "placer.h"
 
-int pgrid(int **grid, int range)
+int	pgrid(int **grid, int range)
 {
 	int i;
 	int j;
@@ -32,7 +32,7 @@ int pgrid(int **grid, int range)
 	return (0);
 }
 
-int fill_grid(int **grid, int *input, int range, int p)
+int	fill_grid(int **grid, int *input, int range, int p)
 {
 	int i;
 
@@ -43,31 +43,29 @@ int fill_grid(int **grid, int *input, int range, int p)
 			grid[p / range][p % range] = ++i;
 		if (check(grid, input, p, range))
 		{
-//			pgrid(grid, range);
-//			write(1, "\n", 1);
 			if (p == range * range)
 				return (pgrid(grid, range));
 			if (fill_grid(grid, input, range, p + 1) == 0)
-				return 0;
+				return (0);
 		}
 	}
 	grid[p / range][p % range] = 0;
 	return (-1);
 }
 
-int place(int *input, int range)
+int	place(int *input, int range)
 {
 	int **grid;
 	int y;
 	int i;
 
 	if (!(grid = malloc(sizeof(int*) * range)))
-		return 0;
+		return (0);
 	y = 0;
 	while (y < range)
 	{
 		if (!(grid[y] = malloc(sizeof(int) * range)))
-			return 0;
+			return (0);
 		y++;
 	}
 	i = 0;
@@ -77,5 +75,5 @@ int place(int *input, int range)
 		i++;
 	}
 	fill_grid(grid, input, range, 0);
-	return 0;
+	return (0);
 }

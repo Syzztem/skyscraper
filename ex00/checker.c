@@ -6,14 +6,14 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 12:07:41 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 15:22:29 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/10 18:02:57 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-int check_row(int *row, int range)
+int		check_row(int *row, int range)
 {
 	int x;
 	int y;
@@ -35,7 +35,7 @@ int check_row(int *row, int range)
 	return (1);
 }
 
-int check_col(int **grid, int i, int range)
+int		check_col(int **grid, int i, int range)
 {
 	int x;
 	int y;
@@ -52,18 +52,19 @@ int check_col(int **grid, int i, int range)
 		}
 		x++;
 	}
-	return(1);
+	return (1);
 }
 
-int     check(int **grid, int *input, int max, int range)
+int		check(int **grid, int *input, int max, int range)
 {
-	(void) input;
 	int i;
 
+	(void)input;
 	i = 0;
 	while (i <= max)
 	{
-		if (!check_row(grid[i % range], range) || !check_col(grid, i / range, range))
+		if (!check_row(grid[i % range], range)
+				|| !check_col(grid, i / range, range))
 			return (0);
 		i += range + 1;
 	}
