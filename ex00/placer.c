@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 18:04:17 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/10 22:14:44 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,5 @@ int	place(int *input, int range)
 		grid[i / range][i % range] = 0;
 		i++;
 	}
-	fill_grid(grid, input, range, 0);
-	return (0);
+	return (fill_grid(grid, input, range, 0));
 }
