@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/11 13:58:05 by lcalendi         ###   ########.fr       */
+/*   Updated: 2019/08/11 14:13:14 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,17 @@ int		pgrid(int **grid, int range)
 int		fill_grid(int **grid, int *input, int range, int p)
 {
 	int i;
+	int sq;
 
+	sq = range * range;
 	i = 0;
 	while (i < range)
 	{
-		if (p < range * range)
+		if (p < sq)
 			grid[p / range][p % range] = ++i;
 		if (check(grid, input, p, range))
 		{
-			if (p == range * range)
+			if (p == sq)
 				return (pgrid(grid, range));
 			if (fill_grid(grid, input, range, p + 1) == 0)
 				return (0);

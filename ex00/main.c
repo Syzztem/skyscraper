@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 11:05:43 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/11 13:58:20 by lcalendi         ###   ########.fr       */
+/*   Updated: 2019/08/11 14:09:46 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		main(int ac, char **av)
 	if (ac == 2)
 	{
 		i = count_ints(av[1]);
-		if (i % 4 != 0)
+		if (i % 4 != 0 && i > 4)
 			return (error(-2));
 		i /= 4;
 		var = place(str_sort(av[1]), i);
