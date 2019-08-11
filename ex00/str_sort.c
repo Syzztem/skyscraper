@@ -6,7 +6,7 @@
 /*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 15:24:38 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/08/11 14:06:41 by lcalendi         ###   ########.fr       */
+/*   Updated: 2019/08/11 14:29:46 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int		count_ints(char *str)
 	int i;
 
 	if (!is_valid(str))
-		return(-2);
+		return (-2);
 	i = 0;
 	while (*str)
 	{

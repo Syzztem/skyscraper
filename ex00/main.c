@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 11:05:43 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/11 14:09:46 by lcalendi         ###   ########.fr       */
+/*   Updated: 2019/08/11 14:29:17 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int		error(int code)
 	int		size;
 	char	*e_list[4];
 
-	e_list[0] = "Malloc error\n";
-	e_list[1] = "Arg format error\n";
-	e_list[2] = "Wrong number of arguments error\n";
-	e_list[3] = "Other error\n";
+	e_list[0] = "Error : malloc failed\n";
+	e_list[1] = "Error : arg format\n";
+	e_list[2] = "Error : wrong number of arguments\n";
+	e_list[3] = "Error : unsolvable\n";
 	size = 0;
 	while (e_list[-code - 1][size])
 		size++;
