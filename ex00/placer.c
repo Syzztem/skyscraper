@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/11 09:30:22 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/11 11:31:27 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,12 @@ int		place(int *input, int range)
 	int i;
 
 	if (!(grid = malloc(sizeof(int*) * range)))
-		return (0);
+		return (-1);
 	y = 0;
 	while (y < range)
 	{
 		if (!(grid[y] = malloc(sizeof(int) * range)))
-			return (0);
+			return (-1);
 		y++;
 	}
 	i = 0;
