@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/11 12:16:40 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/11 13:58:05 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ int		pgrid(int **grid, int range)
 		{
 			ft_putnbr(grid[i][j]);
 			j++;
-			if (j != range)
-				write(1, " ", 1);
 		}
 		write(1, "\n", 1);
 		i++;
@@ -62,7 +60,7 @@ int		fill_grid(int **grid, int *input, int range, int p)
 		}
 	}
 	grid[p / range][p % range] = 0;
-	return (-1);
+	return (-4);
 }
 
 int		place(int *input, int range)
