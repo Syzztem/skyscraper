@@ -6,11 +6,27 @@
 /*   By: lcalendi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 15:24:38 by lcalendi          #+#    #+#             */
-/*   Updated: 2019/08/10 18:06:54 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/11 12:26:24 by lcalendi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
+int		is_valid(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	{
+		if (!(str[i] >= '0' && str[i]<= '9') && i % 2 == 0)
+			return(0);
+		if (str[i] != ' ' && i % 2 == 1)
+			return(0);
+		i++;
+	}
+	return(1)
+}
 
 int		count_ints(char *str)
 {
@@ -23,7 +39,10 @@ int		count_ints(char *str)
 			i++;
 		str++;
 	}
-	return (i);
+	if(is_valid(str))
+		return (i);
+	else
+		return (-1);
 }
 
 int		*str_sort(char *str)
