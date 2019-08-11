@@ -6,13 +6,23 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/10 22:14:44 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/11 09:30:22 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "placer.h"
 
-int	pgrid(int **grid, int range)
+void	free_grid(int **grid, int range)
+{
+	int i;
+
+	i = -1;
+	while (++i < range)
+		free(grid[i]);
+	free(grid);
+}
+
+int		pgrid(int **grid, int range)
 {
 	int i;
 	int j;
@@ -32,7 +42,7 @@ int	pgrid(int **grid, int range)
 	return (0);
 }
 
-int	fill_grid(int **grid, int *input, int range, int p)
+int		fill_grid(int **grid, int *input, int range, int p)
 {
 	int i;
 
@@ -53,7 +63,7 @@ int	fill_grid(int **grid, int *input, int range, int p)
 	return (-1);
 }
 
-int	place(int *input, int range)
+int		place(int *input, int range)
 {
 	int **grid;
 	int y;
@@ -74,5 +84,7 @@ int	place(int *input, int range)
 		grid[i / range][i % range] = 0;
 		i++;
 	}
-	return (fill_grid(grid, input, range, 0));
+	i = fill_grid(grid, input, range, 0);
+	free_grid(grid, range);
+	return (i);
 }
