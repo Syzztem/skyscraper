@@ -6,7 +6,7 @@
 /*   By: lothieve <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 08:53:42 by lothieve          #+#    #+#             */
-/*   Updated: 2019/08/11 09:30:22 by lothieve         ###   ########.fr       */
+/*   Updated: 2019/08/11 12:15:22 by lothieve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int		pgrid(int **grid, int range)
 		{
 			ft_putnbr(grid[i][j]);
 			j++;
+			if (j != range)
+				write(1, " ", 1);
 		}
 		write(1, "\n", 1);
 		i++;
